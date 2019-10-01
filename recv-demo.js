@@ -31,9 +31,11 @@ function playEvents() {
 function onload() {
     let outerArray = undefined;
     loadJSON(function (response) {
+        console.log("loaded response:"+response);
         // Parse JSON string into object
         outerArray = JSON.parse(response);
-        outerArray.array.forEach(element => {
+        console.log("outerArray:"+outerArray);
+        outerArray.forEach(element => {
             jsObject = JSON.parse(element);
             console.log("Message type: " + jsObject.type);
             console.log("Message length: " + jsObject.length);
